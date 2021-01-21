@@ -1,8 +1,7 @@
-version: 2.1
+version: '2.1'
 orbs:
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@x.y.z
 workflows:
   main:
     jobs:
       - circleci-maven-release-orb/run-maven-release:
-          - mvn-release-perform-command: 'mvn --batch-mode release:perform -DdryRun=true -s .maven.xml'
