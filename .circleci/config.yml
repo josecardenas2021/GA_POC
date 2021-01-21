@@ -1,9 +1,8 @@
 version: 2.1
-
 orbs:
-  maven: circleci/maven@0.0.12
-
+  circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@x.y.z
 workflows:
-  maven_test:
+  main:
     jobs:
-      - maven/test # checkout, build, test, and upload test results
+      - circleci-maven-release-orb/run-maven-release:
+          mvn-release-perform-command: 'mvn --batch-mode release:perform -DdryRun=true -s poc.maven.xml
