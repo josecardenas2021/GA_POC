@@ -6,24 +6,55 @@
 	<artifactId>test-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
+		<repository>
+			<id>rso</id>
+			<url>https://repository.sonatype.org/content/repositories/releases/</url>
+		</repository>
 	</distributionManagement>
+	<scm>
+		<developerConnection>scm:git:git@github.com:josecardenas2021/GA_POC.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
-				<extensions>true</extensions>
+				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<releaseProfiles>gpg-sign</releaseProfiles>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>gpg-sign</id>
+			<!-- only sign during deploy phase -->
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<configuration>
+									<gpgArguments>
+										<arg>--pinentry-mode</arg>
+										<arg>loopback</arg>
+									</gpgArguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<properties>
+				<gpg.passphrase>J0s3C4rd3n4s</gpg.passphrase>
+			</properties>
+		</profile>
+	</profiles>
 </project>

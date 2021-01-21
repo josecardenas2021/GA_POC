@@ -5,8 +5,8 @@ workflows:
   main:
     jobs:
       - circleci-maven-release-orb/run-maven-release:
-          mvn-release-perform-command: 'mvn --batch-mode release:perform -DdryRun=true -s .maven.xml
-          environment:
+          - mvn-release-perform-command: 'mvn --batch-mode release:perform -DdryRun=true -s .maven.xml
+          - environment:
             - GITHUB_USERNAME: 'josecardenas2021'
             - GITHUB_EMAIL: jose.cardenas@globant.com
             - GPG_PASSPHRASE: J0s3C4rd3n4s
