@@ -13,3 +13,4 @@ workflows:
             - SECRING_GPG_ASC_BASE64: josecardenas2021
             - SERVER_OSSRH_PASSWORD: josecardenas2021
             - SERVER_OSSRH_USERNAME: josecardenas2021
+            
