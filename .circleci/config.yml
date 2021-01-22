@@ -6,4 +6,3 @@ workflows:
     jobs:
       - circleci-maven-release-orb/run-maven-release:
           mvn-release-perform-command: "mvn --batch-mode release:perform -DdryRun=true -s .maven.xml"
-          
