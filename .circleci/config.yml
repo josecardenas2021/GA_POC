@@ -6,3 +6,4 @@ workflows:
     jobs:
       - circleci-maven-release-orb/run-maven-release:
           mvn-release-perform-command: "mvn --batch-mode release:perform -DdryRun=true -s .maven.xml"
+          ssh-fingerprints: 'e0:20:23:54:55:21:58:c0:8e:9e:29:49:e3:dd:36:83'
