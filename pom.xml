@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.josecardenas2021</groupId>
 	<artifactId>test-project</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<distributionManagement>
 		<repository>
 			<id>rso</id>
