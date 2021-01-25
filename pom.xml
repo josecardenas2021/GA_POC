@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.josecardenas2021</groupId>
 	<artifactId>test-project</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<distributionManagement>
 		<repository>
 			<id>rso</id>
@@ -11,7 +11,7 @@
 	</distributionManagement>
 	<scm>
 		<developerConnection>scm:git:git@github.com:josecardenas2021/GA_POC.git</developerConnection>
-		<tag>test-project-0.0.3</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<build>
 		<plugins>
