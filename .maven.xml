@@ -2,7 +2,7 @@
   <servers>
     <server>
       <!-- Maven Central Deployment -->
-      <id>rso</id>
+      <id>ossrh</id>
       <username>jose.cardenas.glob</username>
       <password>j0s3C4rd3n4$2021</password>
     </server>
