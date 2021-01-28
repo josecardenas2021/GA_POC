@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.josecardenas2021</groupId>
 	<artifactId>test-project</artifactId>
-	<version>0.0.32-SNAPSHOT</version>
+	<version>0.0.30-SNAPSHOT</version>
 	<properties>
 	     <maven.compiler.source>1.8</maven.compiler.source>
 	     <maven.compiler.target>1.8</maven.compiler.target>
@@ -10,13 +10,15 @@
 	<distributionManagement>
 		<repository>
 			<id>rso</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+			<url>https://repository.sonatype.org/content/repositories/releases/</url>
 		</repository>
 	</distributionManagement>
-	<scm>
-		<developerConnection>scm:git:git@github.com:josecardenas2021/GA_POC.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
+  <scm>
+		<url>https://github.com/josecardenas2021/GA_POC</url>
+    <connection>scm:git:git@github.com:josecardenas2021/GA_POC.git</connection>
+    <developerConnection>scm:git:git@github.com:josecardenas2021/GA_POC.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
 	<dependencies>
 	<dependency>
       <groupId>junit</groupId>
