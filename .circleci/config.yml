@@ -7,3 +7,4 @@ workflows:
       - circleci-maven-release-orb/run-maven-release:
           mvn-release-perform-command: "mvn --batch-mode release:perform -s .maven.xml"
           ssh-fingerprints: 'MD5:35:b1:eb:f1:2e:3d:59:0f:ea:e9:92:fc:03:76:10:0b'
+          
