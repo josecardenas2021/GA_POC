@@ -17,7 +17,6 @@
 		<url>https://github.com/josecardenas2021/GA_POC</url>
     <connection>scm:git:git@github.com:josecardenas2021/GA_POC.git</connection>
     <developerConnection>scm:git:git@github.com:josecardenas2021/GA_POC.git</developerConnection>
-      <tag>HEAD</tag>
   </scm>
 	<dependencies>
 	<dependency>
