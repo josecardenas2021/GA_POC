@@ -3,8 +3,8 @@
     <server>
       <!-- Maven Central Deployment -->
       <id>rso</id>
-      <username>${env.SONATYPE_USERNAME}</username>
-      <password>${env.SONATYPE_PASSWORD}</password>
+      <username>jose.cardenas.glob</username>
+      <password>j0s3C4rd3n4$2021</password>
     </server>
   </servers>
 </settings>
