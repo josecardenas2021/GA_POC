@@ -2,7 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.josecardenas2021</groupId>
 	<artifactId>test-project</artifactId>
+<<<<<<< HEAD
 	<version>0.0.22-SNAPSHOT</version>
+=======
+	<version>0.0.24-SNAPSHOT</version>
+>>>>>>> c69d3dbfedce045cd4a308c9d282f4c8230373c9
 	<properties>
 	     <maven.compiler.source>1.8</maven.compiler.source>
 	     <maven.compiler.target>1.8</maven.compiler.target>
