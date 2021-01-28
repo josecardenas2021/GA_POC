@@ -1,13 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.josecardenas2021</groupId>
-	<artifactId>test-project</artifactId>
-	<version>0.0.53-SNAPSHOT</version>
-	<properties>
-	     <maven.compiler.source>1.8</maven.compiler.source>
-	     <maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
-	<distributionManagement>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.josecardenas2021</groupId>
+  <artifactId>test-project</artifactId>
+  <version>0.0.53-SNAPSHOT</version>
+  <name>com.github.josecardenas2021:test-project</name>
+  <description>CircleCI Maven release POC</description>
+  <url>https://github.com/josecardenas2021/GA_POC</url>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <distributionManagement>
     <snapshotRepository>
       <id>ossrh</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -18,11 +21,13 @@
     </repository>
   </distributionManagement>
   <scm>
+    <url>https://github.com/josecardenas2021/GA_POC</url>
+    <connection>scm:git:git@github.com:josecardenas2021/GA_POC.git</connection>
     <developerConnection>scm:git:git@github.com:josecardenas2021/GA_POC.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-	<dependencies>
-	<dependency>
+  <dependencies>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
@@ -73,4 +78,18 @@
       </properties>
     </profile>
   </profiles>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Jose Cardenas</name>
+      <email>jose.cardenas@globant.com</email>
+      <organization>Globant</organization>
+      <organizationUrl>https://www.globant.com/</organizationUrl>
+    </developer>
+  </developers>
 </project>
