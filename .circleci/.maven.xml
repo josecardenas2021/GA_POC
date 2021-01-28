@@ -3,8 +3,8 @@
     <server>
       <!-- Maven Central Deployment -->
       <id>ossrh</id>
-      <username>jose.cardenas.glob</username>
-      <password>j0s3C4rd3n4$2021</password>
+      <username>${env.SERVER_OSSRH_USERNAME}</username>
+      <password>${env.SERVER_OSSRH_PASSWORD}</password>
     </server>
   </servers>
 </settings>
