@@ -8,7 +8,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - store_test_results:
-          path: test-results
+          path: target/surefire-reports
 
 workflows:
   main:
