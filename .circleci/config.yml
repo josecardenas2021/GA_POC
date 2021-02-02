@@ -3,17 +3,17 @@ orbs:
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@0.0.16
 
 jobs:
-  release:
+  store_test_results:
     executor: default
     steps:
-      - circleci-maven-release-orb/run-maven-release:
-          ssh-fingerprints: 'MD5:35:b1:eb:f1:2e:3d:59:0f:ea:e9:92:fc:03:76:10:0b'
       - store_test_results:
           path: test-results
 
 workflows:
   main:
     jobs:
-      - release
+      - circleci-maven-release-orb/run-maven-release:
+        ssh-fingerprints: 'MD5:35:b1:eb:f1:2e:3d:59:0f:ea:e9:92:fc:03:76:10:0b'
+      - store_test_results
 
     
