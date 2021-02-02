@@ -5,8 +5,7 @@ orbs:
 jobs:
   release:
     docker:
-      - image: circleci/node:latest
-    executor: maven-executor
+      - image: circleci/openjdk:8-jdk
     steps:
       - circleci-maven-release-orb/maven-release:
           mvn-read-version-command: >-
