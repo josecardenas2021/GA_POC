@@ -3,10 +3,10 @@ orbs:
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@0.0.16
 
 jobs:
-  executor: maven-executor
   release:
     docker:
       - image: circleci/node:latest
+    executor: maven-executor
     steps:
       - circleci-maven-release-orb/maven-release:
           mvn-read-version-command: >-
