@@ -8,12 +8,12 @@ jobs:
       - image: circleci/node:latest
     steps:
       - circleci-maven-release-orb/maven-release:
-         mvn-read-version-command: >-
+          mvn-read-version-command: >-
             mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}'
             --non-recursive exec:exec
-         mvn-release-perform-command: >-
+          mvn-release-perform-command: >-
             'mvn --batch-mode release:perform -s .circleci/.maven.xml'
-         mvn-release-prepare-command: >-
+          mvn-release-prepare-command: >-
             mvn --batch-mode release:prepare -DscmCommentPrefix="[skip ci]
             [maven-release-plugin] "
           ssh-fingerprints: 'MD5:35:b1:eb:f1:2e:3d:59:0f:ea:e9:92:fc:03:76:10:0b'
