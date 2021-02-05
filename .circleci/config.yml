@@ -37,5 +37,5 @@ workflows:
           path: target/surefire-reports
       - store_artifacts:
           path: target/*.jar
-      - - notify:
+      - notify:
           context: slack-secrets
