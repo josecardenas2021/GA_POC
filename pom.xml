@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.josecardenas2021</groupId>
 	<artifactId>test-project</artifactId>
-  <version>0.0.68-SNAPSHOT</version>
+  <version>0.0.69-SNAPSHOT</version>
   <name>com.github.josecardenas2021:test-project</name>
   <description>CircleCI Maven release POC</description>
   <url>https://github.com/josecardenas2021/GA_POC</url>
