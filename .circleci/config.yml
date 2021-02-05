@@ -27,6 +27,8 @@ jobs:
           event: always
   
   post-release:
+    docker:
+      - image: 'cimg/base:stable'
     steps:
       - store_test_results:
           path: target/surefire-reports
