@@ -25,6 +25,15 @@ jobs:
               ]
             }
           event: always
+  
+  post-release:
+    steps:
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/*.jar
+      - notify:
+          context: slack-secrets
 
 workflows:
   release:
@@ -33,9 +42,4 @@ workflows:
           ssh-fingerprints: 'MD5:35:b1:eb:f1:2e:3d:59:0f:ea:e9:92:fc:03:76:10:0b'
   post-release:
     jobs:
-      - store_test_results:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/*.jar
-      - notify:
-          context: slack-secrets
+      - post-release
