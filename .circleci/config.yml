@@ -1,30 +1,41 @@
 version: 2.1
 orbs:
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@0.0.16
+  slack: circleci/slack@4.1
 
 jobs:
-  release:
+  notify:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: 'cimg/base:stable'
     steps:
-      - circleci-maven-release-orb/maven-release:
-          mvn-read-version-command: >-
-            mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' 
-            --non-recursive exec:exec
-          mvn-release-perform-command: >-
-            mvn --batch-mode release:perform -s .circleci/.maven.xml
-          mvn-release-prepare-command: >-
-            mvn --batch-mode release:prepare -DscmCommentPrefix="[skip ci]
-            [maven-release-plugin] "
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+
+workflows:
+  release:
+    jobs:
+      - circleci-maven-release-orb/run-maven-release:
           ssh-fingerprints: 'MD5:35:b1:eb:f1:2e:3d:59:0f:ea:e9:92:fc:03:76:10:0b'
+  post-release:
+    jobs:
       - store_test_results:
           path: target/surefire-reports
       - store_artifacts:
           path: target/*.jar
-
-workflows:
-  main:
-    jobs:
-      - release
-
-    
+      - - notify:
+          context: slack-secrets
